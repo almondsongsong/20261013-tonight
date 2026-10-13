@@ -105,7 +105,10 @@ section:first-child{border-top:none;padding:0}
 .nav-menu{display:none;position:absolute;top:52px;left:50%;transform:translateX(-50%);width:min(100%,480px);padding:10px 20px;background:var(--card);border:1px solid var(--line);box-shadow:0 12px 24px #0007}
 .nav-menu.open{display:block}
 .nav-menu a{display:block;padding:10px 0;color:var(--text);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
-.nav-menu a:first-child{color:var(--accent)}
+.nav-author{padding:12px 0 16px;border-bottom:1px solid var(--line)}
+.nav-author-title{font-size:15px;color:var(--text);margin-bottom:8px}
+.nav-author p{font-size:13px;line-height:1.8;color:var(--sub)}
+.nav-menu a:first-of-type{color:var(--text)}
 .nav-menu a:last-child{border-bottom:0}
 .nav-menu a:hover,.nav-icon:hover{color:var(--accent)}
 html{scroll-padding-top:52px}
@@ -114,9 +117,10 @@ body.light{--bg:#f8f5f0;--card:#eee8df;--line:#d9d0c6;--text:#28211e;--sub:#6f62
 .command:last-child{border-bottom:0}
 .command strong{font-size:13px;color:var(--accent);min-width:65px}
 .command span{font-size:13px;color:var(--sub)}
-.footer{max-width:480px;margin:auto;padding:20px;border-top:1px solid var(--line);text-align:center}
-.footer a{font-size:12px;color:var(--sub);text-decoration:none}
-.footer a:hover{color:var(--accent)}
+.footer{max-width:480px;margin:0 auto;padding:28px 20px 36px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--sub)}
+.footer p{line-height:1.7}
+.footer .credit{margin-top:10px}
+.char-img img{display:block;width:100%;height:100%;object-fit:cover}
 </style>
 </head>
 <body>
@@ -130,7 +134,7 @@ body.light{--bg:#f8f5f0;--card:#eee8df;--line:#d9d0c6;--text:#28211e;--sub:#6f62
     </div>
   </div>
   <div class="nav-menu" id="nav-menu">
-    <a href="https://almondsongsong.github.io/profile/">작가소개</a>
+    <div class="nav-author"><div class="nav-author-title">작가 소개</div><p>당신이 주인공이 되는 다채로운 서사의 세계,<br>AI채팅 크리에이터 아몬드송송 입니다.</p></div>
     <a href="#story">STORY</a>
     <a href="#characters">CHARACTERS</a>
     <a href="#play-guide">PLAY GUIDE</a>
@@ -168,7 +172,7 @@ body.light{--bg:#f8f5f0;--card:#eee8df;--line:#d9d0c6;--text:#28211e;--sub:#6f62
     <div class="label">CHARACTERS</div>
     <div class="chars">
       <article class="char">
-        <div class="char-img">남주 이미지 (미정)</div>
+        <div class="char-img"><img src="assets/char.png" alt="차태건 캐릭터 이미지" loading="lazy"></div>
         <div class="char-body">
           <div class="char-name">차태건</div>
           <div class="char-role">오너 바텐더</div>
@@ -176,7 +180,7 @@ body.light{--bg:#f8f5f0;--card:#eee8df;--line:#d9d0c6;--text:#28211e;--sub:#6f62
         </div>
       </article>
       <article class="char">
-        <div class="char-img">여주 금발 이미지</div>
+        <div class="char-img"><img src="assets/user.png" alt="이시현 추천 페르소나 이미지" loading="lazy"></div>
         <div class="char-body">
           <div class="char-name">이시현 (당신)</div>
           <div class="char-role">단골손님 · 추천 페르소나</div>
@@ -227,7 +231,13 @@ body.light{--bg:#f8f5f0;--card:#eee8df;--line:#d9d0c6;--text:#28211e;--sub:#6f62
   </section>
 
 </div>
-<footer class="footer"><a href="#">↑ 맨 위로 돌아가기</a></footer>
+<footer class="footer">
+  <p class="credit">© 2026 아몬드송송 · ALL RIGHTS RESERVED<br>
+  본 작품의 세계관·캐릭터 설정·스토리·창작 요소 및<br>
+  HTML 구조 · 레이아웃 · 디자인의<br>
+  무단 복제, 도용, 변형 및 재배포를 금합니다.</p>
+  <p class="credit">Original Story &amp; Creative Design by 🤎⋆ ˚｡⋆୨୧아몬드송송୨୧⋆｡˚ ⋆🤎</p>
+</footer>
 <script>
 const menu=document.getElementById('nav-menu'),button=document.getElementById('menu-toggle');
 button.addEventListener('click',()=>{const open=menu.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});
