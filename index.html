@@ -33,7 +33,7 @@ body{
 .wrap{max-width:480px;margin:0 auto}
 section{padding:40px 20px;border-top:1px solid var(--line);scroll-margin-top:56px}
 section.hero{border-top:none;padding:0}
-.label{font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:14px}
+.label{font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:14px}
 
 /* NAV */
 .nav{
@@ -102,11 +102,7 @@ section.hero{border-top:none;padding:0}
   border-radius:14px;overflow:hidden;min-width:0;
 }
 .char-img{
-  aspect-ratio:1/1;                /* 더 낮게: 5/4 */
-  background-color:var(--line);
-  background-size:cover;
-  background-position:center top;  /* 위쪽(얼굴) 기준 */
-  background-repeat:no-repeat;
+  aspect-ratio:3/4;background:var(--line) center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
   color:var(--sub);font-size:11px;text-align:center;padding:8px;
 }
@@ -168,6 +164,10 @@ section.hero{border-top:none;padding:0}
 }
 .footer p{margin-bottom:12px}
 .footer p:last-child{margin-bottom:0}
+
+        .user-label { font-size:0.8em; font-weight:400; color:var(--text-sub); }
+        
+        
 </style>
 </head>
 <body>
@@ -206,7 +206,7 @@ section.hero{border-top:none;padding:0}
     <div class="hero-txt">
       <div class="genre">성인 로맨스 · 선관계 후연애</div>
       <h1 class="title">오늘 밤은<br>당신으로 주문할게요</h1>
-      <p class="hook">손님으로만 대하던 {{user}}에게,<br>처음으로 남자가 되고 싶어졌다.</p>
+      <p class="hook">손님으로만 대하던 당신에게,<br>처음으로 남자가 되고 싶어졌다.</p>
     </div>
   </section>
 
@@ -214,12 +214,12 @@ section.hero{border-top:none;padding:0}
   <section class="story" id="story">
     <div class="label">STORY</div>
     <p class="nr">금요일 밤, 작은 혼술 칵테일 바 Alone.</p>
-    <p class="nr">카운터 안에서 잔을 정리하던 {{char}}는 문이 열리는 소리에 고개를 들었다.</p>
-    <p class="nr">익숙한 자리에 앉는 여자를 무심코 바라보던 그의 손이 잠시 멈췄다. 늘 검은 머리였던 {{user}}가 밝은 금발로 나타난 것이다.</p>
+    <p class="nr">카운터 안에서 잔을 정리하던 <b>차태건</b>은 문이 열리는 소리에 고개를 들었다.</p>
+    <p class="nr">익숙한 자리에 앉는 여자를 무심코 바라보던 그의 손이 잠시 멈췄다. 늘 검은 머리였던 <b>서이현</b><span class="user-label">(당신)</span>이 밝은 금발로 나타난 것이다.</p>
     <p class="nr">반년 동안 꾸준히 찾아오던 단골손님. 분명 익숙한 얼굴인데 오늘은 어딘가 낯설었다.</p>
-    <p class="dl"><b>{{char}}</b> ……못 알아볼 뻔했네요. 머리, 잘 어울리세요.</p>
+    <p class="dl"><b>차태건</b> ……못 알아볼 뻔했네요. 머리, 잘 어울리세요.</p>
     <p class="nr">그는 잠시 시선을 머물렀다가 평소처럼 잔을 꺼내 들었다.</p>
-    <p class="dl"><b>{{char}}</b> 오늘도 늘 드시던 걸로 준비해 드릴까요?</p>
+    <p class="dl"><b>차태건</b> 오늘도 늘 드시던 걸로 준비해 드릴까요?</p>
   </section>
 
   <!-- 03 CHARACTERS -->
@@ -227,20 +227,16 @@ section.hero{border-top:none;padding:0}
     <div class="label">CHARACTERS</div>
     <div class="chars">
       <article class="char">
-        <!-- 이미지: style에 background-image:url('남주이미지.jpg') 추가 / 위치 조정은 background-position -->
-        <div class="char-img" style="background-position:center 20%">남주 이미지</div>
+        <div class="char-img"><img src="assets/char.png" alt="차태건 캐릭터 이미지" loading="lazy"></div>
         <div class="char-body">
           <div class="char-name">차태건</div>
-          <div class="char-role">오너 바텐더</div>
-          <p class="char-desc">조용하고 절제된 직진남. 세심하게 관찰하고, 감정이 명확해지면 직접 표현한다.</p>
-        </div>
+          <div class="char-role">혼술바 Alone의 오너 바텐더</div>
       </article>
       <article class="char">
-        <!-- 이미지: style에 background-image:url('여주이미지.jpg') 추가 / 얼굴이 더 위면 퍼센트를 낮추세요 -->
-        <div class="char-img" style="background-position:center 5%">여주 이미지</div>
+        <div class="char-img"><img src="assets/user1.png" alt="서이현 캐릭터 이미지" loading="lazy"></div>
         <div class="char-body">
-          <div class="char-name">이시현 (당신)</div>
-          <div class="char-role">단골손님 · 추천 페르소나</div>
+          <div class="char-name">서이현<span class="user-label">(당신)</span></div>
+          <div class="char-role">단골손님</div>
           <p class="char-desc">성인 여성. 관계를 어디까지 발전시킬지는 당신이 결정한다.</p>
         </div>
       </article>
@@ -253,24 +249,24 @@ section.hero{border-top:none;padding:0}
     <div class="guide">
       <h3>남주 유혹하기</h3>
       <div class="tags">#적극적인유혹 #철벽무너뜨리기</div>
-      <p>반년 동안 눈여겨봤던 바텐더 {{char}}. 오늘은 손님으로만 남을 생각이 없다. 평소 침착한 그가 어디까지 흔들리는지 직접 확인해 보자.</p>
+      <p>반년 동안 눈여겨봤던 바텐더 차태건. 오늘은 손님으로만 남을 생각이 없다. 평소 침착한 그가 어디까지 흔들리는지 직접 확인해 보자.</p>
     </div>
     <div class="guide">
       <h3>다른 남자와 바에 방문하기</h3>
       <div class="tags">#질투유발 #감정자각</div>
-      <p>언제나 혼자 찾아오던 {{user}}가 오늘은 낯선 남자와 함께 Alone에 들어선다. {{char}}는 평소처럼 두 사람의 주문을 받지만, 어쩐지 평소보다 말수가 줄어든다.</p>
+      <p>언제나 혼자 찾아오던 당신이 오늘은 낯선 남자와 함께 Alone에 들어선다. 차태건은 평소처럼 두 사람의 주문을 받지만, 어쩐지 평소보다 말수가 줄어든다.</p>
     </div>
     <div class="guide">
       <h3>하룻밤만 즐기는 사이 되기</h3>
       <div class="tags">#선관계후연애 #어른의연애</div>
-      <p>연애는 부담스럽지만 서로에게 끌리는 건 부정할 수 없다. {{char}}와 합의하에 가벼운 관계를 시작하고, 감정이 깊어지는 쪽이 누구인지 지켜보자.</p>
+      <p>연애는 부담스럽지만 서로에게 끌리는 건 부정할 수 없다. 가벼운 관계를 시작하고, 감정이 깊어지는 쪽이 누구인지 지켜보자.</p>
     </div>
     <p class="note">플레이 가이드는 선택 가능한 방향이며, 사건은 자동으로 발생하지 않습니다.</p>
 
     <div class="label cmd-label">SPECIAL COMMANDS</div>
     <div class="cmds">
-      <div class="cmd"><b>!속마음</b><span>{{char}}의 현재 감정과 숨겨진 생각 확인</span></div>
-      <div class="cmd"><b>!핸드폰</b><span>{{char}}의 휴대폰 잠금화면 및 알림 확인</span></div>
+      <div class="cmd"><b>!속마음</b><span>차태건의 현재 감정과 숨겨진 생각 확인</span></div>
+      <div class="cmd"><b>!핸드폰</b><span>차태건의 휴대폰 잠금화면 및 알림 확인</span></div>
       <div class="cmd"><b>!다음</b><span>현재 장면을 마무리하고 자연스럽게 다음 장면으로 이동</span></div>
       <div class="cmd"><b>!그만</b><span>진행 중인 행동이나 상황 중단</span></div>
       <div class="cmd"><b>!이벤트</b><span>현재 상황에 어울리는 새로운 사건 하나 발생</span></div>
@@ -308,4 +304,22 @@ section.hero{border-top:none;padding:0}
     btn.setAttribute('aria-expanded',open?'true':'false');
     btn.textContent=open?'✕':'☰';
   }
-  btn.addEventListener('click',function(){setMenu(!menu.classList.co
+  btn.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+  menu.querySelectorAll('a.item').forEach(function(a){
+    a.addEventListener('click',function(){setMenu(false)});
+  });
+
+  var root=document.documentElement;
+  try{
+    var saved=localStorage.getItem('theme');
+    if(saved)root.setAttribute('data-theme',saved);
+  }catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
