@@ -101,11 +101,19 @@ section.hero{border-top:none;padding:0}
   background:var(--card);border:1px solid var(--line);
   border-radius:14px;overflow:hidden;min-width:0;
 }
-.char-img{
+/*.char-img{
   aspect-ratio:3/4;background:var(--line) center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
   color:var(--sub);font-size:11px;text-align:center;padding:8px;
+}*/
+
+  .char-img{
+  aspect-ratio:3/4;
+  background: var(--line) center 20% / cover no-repeat; /* 세로 포지션을 20% 등으로 조정 */
+  display:flex; align-items:center; justify-content:center;
+  color:var(--sub); font-size:11px; text-align:center; padding:8px;
 }
+  
 .char-body{padding:12px}
 .char-name{font-size:15px;font-weight:600;margin-bottom:2px;word-break:break-all}
 .char-role{font-size:11px;color:var(--accent);margin-bottom:6px}
