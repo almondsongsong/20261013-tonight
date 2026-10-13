@@ -1,149 +1,238 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f0d0c">
-<meta name="description" content="손님으로만 대하던 당신에게, 처음으로 남자가 되고 싶어졌다. 오늘 밤은 당신으로 주문할게요.">
-<title>오늘 밤은 당신으로 주문할게요 | 아몬드송송</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>오늘 밤은 당신으로 주문할게요</title>
 <style>
-:root{--bg:#0f0d0c;--card:#1a1715;--line:#2e2824;--text:#f2ebe4;--sub:#a89d93;--accent:#e0a458;--nav:rgba(15,13,12,.96)}
-body.light{--bg:#f9f6f1;--card:#efe9e1;--line:#d8cfc5;--text:#29231e;--sub:#706760;--accent:#9b642c;--nav:rgba(249,246,241,.96)}
+:root{
+  --bg:#0f0d0c;
+  --card:#1a1715;
+  --line:#2e2824;
+  --text:#f2ebe4;
+  --sub:#a89d93;
+  --accent:#e0a458;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:58px}
-body{background:var(--bg);color:var(--text);font-family:"Noto Sans KR",sans-serif;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-.wrap{max-width:480px;margin:auto}
-.topbar{position:sticky;top:0;z-index:100;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.topbar-inner{max-width:480px;height:56px;margin:auto;padding:0 18px;display:flex;justify-content:space-between;align-items:center}
-.menu-btn,.nav-action{border:0;background:none;color:var(--text);display:grid;place-items:center;min-width:35px;min-height:38px;font-size:21px}
-.nav-right{display:flex;align-items:center;gap:5px}
-.nav-action{font-size:19px}
-.nav-action:hover,.menu-btn:hover{color:var(--accent)}
-.menu{display:none;position:absolute;top:56px;left:50%;transform:translateX(-50%);width:min(100%,480px);padding:14px 20px 18px;background:var(--card);border:1px solid var(--line);box-shadow:0 16px 35px #0006}
-.menu.open{display:grid}
-.menu a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);font-size:13px}
-.menu a:first-child{color:var(--accent);font-weight:700}
-.menu a:hover{color:var(--accent)}
-section{padding:50px 20px;border-top:1px solid var(--line)}
-.hero{border-top:0;min-height:calc(100svh - 56px);display:flex;flex-direction:column;justify-content:center}
-.hero-txt{text-align:center;padding:70px 0 58px}
-.genre,.label{font-size:11px;letter-spacing:.12em;color:var(--accent)}
-.genre{margin-bottom:14px}
-.label{margin-bottom:18px}
-h1,h2{font-family:"Noto Serif KR",serif}
-h1{font-size:clamp(24px,6vw,29px);font-weight:600;line-height:1.48;margin-bottom:18px}
-.hook{font-size:14px;color:var(--sub);line-height:1.9}
-.model{font-size:12px;color:var(--accent);margin-top:18px}
-.story p{font-size:14px;line-height:1.95;margin-bottom:15px}
-.nr{color:var(--sub);font-style:italic}
-.dl b{color:var(--accent);margin-right:5px}
-.chars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.char{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.char-img{width:100%;aspect-ratio:1/1;background:#221e1b center/cover no-repeat;display:grid;place-items:center;color:var(--sub);font-size:11px;text-align:center;padding:8px}
-.char-body{padding:13px}
-.char-name{font-size:15px;font-weight:700;margin-bottom:3px}
-.char-role{font-size:11px;color:var(--accent);margin-bottom:7px}
-.char-desc{font-size:12px;line-height:1.7;color:var(--sub)}
-.guide,.command{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
-.guide h3{font-size:15px;margin-bottom:4px;font-weight:600}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:480px;margin:0 auto}
+section{padding:40px 20px;border-top:1px solid var(--line)}
+section:first-child{border-top:none;padding:0}
+.label{font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:14px}
+
+/* HERO */
+.hero-img{
+  width:100%;aspect-ratio:3/4;
+  background:var(--card) center/cover no-repeat;
+  /* background-image:url('여주이미지.jpg'); */
+  display:flex;align-items:center;justify-content:center;
+  color:var(--sub);font-size:12px;
+}
+.hero-txt{padding:72px 20px 56px;text-align:center}
+.genre{font-size:12px;color:var(--accent);margin-bottom:10px;letter-spacing:.04em}
+.title{font-size:28px;font-weight:600;line-height:1.35;margin-bottom:14px}
+.hook{font-size:14px;color:var(--sub);line-height:1.7}
+
+/* STORY */
+.story p{font-size:15px;line-height:1.9;margin-bottom:14px}
+.story .nr{color:var(--sub);font-style:italic}
+.story .dl b{font-weight:600;color:var(--accent);margin-right:4px}
+
+/* CHARACTERS : 두 카드가 한눈에 보이도록 2열 배치 */
+.chars{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.char{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;
+  min-width:0;
+}
+.char-img{
+  aspect-ratio:3/4;background:#221e1b center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--sub);font-size:11px;text-align:center;padding:8px;
+}
+.char-body{padding:12px}
+.char-name{font-size:15px;font-weight:600;margin-bottom:2px;word-break:break-all}
+.char-role{font-size:11px;color:var(--accent);margin-bottom:6px}
+.char-desc{font-size:12px;color:var(--sub);line-height:1.65}
+
+/* 아주 좁은 화면에서는 세로로 쌓기 */
+@media (max-width:339px){
+  .chars{grid-template-columns:1fr}
+  .char-img{aspect-ratio:4/3}
+}
+
+/* PLAY GUIDE */
+.guide{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:16px;margin-bottom:12px;
+}
+.guide h3{font-size:15px;font-weight:600;margin-bottom:4px}
 .tags{font-size:12px;color:var(--accent);margin-bottom:8px}
-.guide p,.command p{font-size:13px;color:var(--sub);line-height:1.8}
-.note{font-size:12px;color:var(--sub);text-align:center;margin-top:14px}
-.command-grid{display:grid;grid-template-columns:1fr;gap:9px}
-.command{margin:0;display:flex;gap:12px;align-items:flex-start}
-.command code{flex:none;min-width:72px;color:var(--accent);font-size:13px;font-weight:700}
-.command p{flex:1}
-.platform{text-align:center;padding-bottom:48px}
-.platform h2{font-size:18px;margin-bottom:20px;font-weight:600}
+.guide p{font-size:13px;color:var(--sub);line-height:1.7}
+.note{font-size:12px;color:var(--sub);text-align:center;margin-top:16px}
+
+/* PLATFORM */
+.platform{text-align:center;padding-bottom:64px}
+.platform h2{font-size:17px;font-weight:600;margin-bottom:20px}
 .links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.links a{padding:13px 8px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:13px;transition:color .2s,border-color .2s}
-.links a:hover,.links a:focus-visible{color:var(--accent);border-color:var(--accent)}
-.backtop{display:block;margin:26px auto 0;padding:10px;background:transparent;border:0;color:var(--sub);font-size:12px}
-.backtop:hover{color:var(--accent)}
-@media(max-width:339px){.chars{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.links a{
+  display:block;padding:14px 0;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:12px;color:var(--text);
+  text-decoration:none;font-size:14px;
+  transition:border-color .2s;
+}
+.links a:hover,.links a:active{border-color:var(--accent)}
+
+/* 추가: 상단 네비게이션과 하단 영역 */
+.top-nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:480px;margin:auto;height:52px;padding:0 18px;display:flex;align-items:center;justify-content:space-between}
+.nav-menu-button,.nav-icon{background:none;border:0;color:var(--text);font:inherit;cursor:pointer}
+.nav-menu-button{font-size:23px}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.nav-icon{font-size:19px}
+.nav-menu{display:none;position:absolute;top:52px;left:50%;transform:translateX(-50%);width:min(100%,480px);padding:10px 20px;background:var(--card);border:1px solid var(--line);box-shadow:0 12px 24px #0007}
+.nav-menu.open{display:block}
+.nav-menu a{display:block;padding:10px 0;color:var(--text);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.nav-menu a:first-child{color:var(--accent)}
+.nav-menu a:last-child{border-bottom:0}
+.nav-menu a:hover,.nav-icon:hover{color:var(--accent)}
+html{scroll-padding-top:52px}
+body.light{--bg:#f8f5f0;--card:#eee8df;--line:#d9d0c6;--text:#28211e;--sub:#6f6259;--accent:#a16c31}
+.command{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.command:last-child{border-bottom:0}
+.command strong{font-size:13px;color:var(--accent);min-width:65px}
+.command span{font-size:13px;color:var(--sub)}
+.footer{max-width:480px;margin:auto;padding:20px;border-top:1px solid var(--line);text-align:center}
+.footer a{font-size:12px;color:var(--sub);text-decoration:none}
+.footer a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
-<nav class="topbar" aria-label="상단 메뉴">
-<div class="topbar-inner">
-<button class="menu-btn" id="menuToggle" type="button" aria-label="메뉴 열기" aria-controls="menu" aria-expanded="false">☰</button>
-<div class="nav-right">
-<a class="nav-action" href="https://x.com/" aria-label="X 프로필(연결 주소 확인 필요)" title="X">𝕏</a>
-<a class="nav-action" href="mailto:" aria-label="이메일(주소 설정 필요)" title="이메일">✉</a>
-<button class="nav-action" type="button" id="themeToggle" aria-label="색상 모드 전환">◐</button>
-</div></div>
-<div class="menu" id="menu">
-<a href="https://almondsongsong.github.io/profile/">작가소개</a>
-<a href="#story">STORY</a><a href="#characters">CHARACTERS</a><a href="#guide">PLAY GUIDE</a><a href="#commands">SPECIAL COMMANDS</a><a href="#play">PLAY</a>
-</div>
+<nav class="top-nav" aria-label="상단 네비게이션">
+  <div class="nav-inner">
+    <button class="nav-menu-button" id="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">☰</button>
+    <div class="nav-actions">
+      <a class="nav-icon" href="https://x.com/" aria-label="X 프로필">𝕏</a>
+      <a class="nav-icon" href="mailto:" aria-label="이메일">✉</a>
+      <button class="nav-icon" id="theme-toggle" aria-label="색상 모드 전환">◐</button>
+    </div>
+  </div>
+  <div class="nav-menu" id="nav-menu">
+    <a href="https://almondsongsong.github.io/profile/">작가소개</a>
+    <a href="#story">STORY</a>
+    <a href="#characters">CHARACTERS</a>
+    <a href="#play-guide">PLAY GUIDE</a>
+    <a href="#platform">PLAY</a>
+  </div>
 </nav>
-<main class="wrap">
-<section class="hero" id="hero">
-<div class="hero-txt">
-<div class="genre">성인 로맨스 · 선관계 후연애</div>
-<h1>오늘 밤은<br>당신으로 주문할게요</h1>
-<p class="hook">손님으로만 대하던 {{user}}에게,<br>처음으로 남자가 되고 싶어졌다.</p>
-<p class="model">추천 모델: Flash 3.8 &amp; Pro2.5</p>
+<div class="wrap">
+
+  <!-- 01 HERO -->
+  <section>
+    <!-- 여주 금발 이미지 영역 (이미지 준비되면 주석 해제)
+    <div class="hero-img">여주 금발 이미지 영역</div>
+    -->
+    <div class="hero-txt">
+      <div class="genre">성인 로맨스 · 선관계 후연애</div>
+      <h1 class="title">오늘 밤은<br>당신으로 주문할게요</h1>
+      <p class="hook">손님으로만 대하던 {{user}}에게,<br>처음으로 남자가 되고 싶어졌다.</p>
+    </div>
+  </section>
+
+  <!-- 02 STORY -->
+  <section class="story" id="story">
+    <div class="label">STORY</div>
+    <p class="nr">금요일 밤, 작은 혼술 칵테일 바 Alone.</p>
+    <p class="nr">카운터 안에서 잔을 정리하던 {{char}}는 문이 열리는 소리에 고개를 들었다.</p>
+    <p class="nr">익숙한 자리에 앉는 여자를 무심코 바라보던 그의 손이 잠시 멈췄다. 늘 검은 머리였던 {{user}}가 밝은 금발로 나타난 것이다.</p>
+    <p class="nr">반년 동안 꾸준히 찾아오던 단골손님. 분명 익숙한 얼굴인데 오늘은 어딘가 낯설었다.</p>
+    <p class="dl"><b>{{char}}</b> ……못 알아볼 뻔했네요. 머리, 잘 어울리세요.</p>
+    <p class="nr">그는 잠시 시선을 머물렀다가 평소처럼 잔을 꺼내 들었다.</p>
+    <p class="dl"><b>{{char}}</b> 오늘도 늘 드시던 걸로 준비해 드릴까요?</p>
+  </section>
+
+  <!-- 03 CHARACTERS -->
+  <section id="characters">
+    <div class="label">CHARACTERS</div>
+    <div class="chars">
+      <article class="char">
+        <div class="char-img">남주 이미지 (미정)</div>
+        <div class="char-body">
+          <div class="char-name">차태건</div>
+          <div class="char-role">오너 바텐더</div>
+          <p class="char-desc">조용하고 절제된 직진남. 세심하게 관찰하고, 감정이 명확해지면 직접 표현한다.</p>
+        </div>
+      </article>
+      <article class="char">
+        <div class="char-img">여주 금발 이미지</div>
+        <div class="char-body">
+          <div class="char-name">이시현 (당신)</div>
+          <div class="char-role">단골손님 · 추천 페르소나</div>
+          <p class="char-desc">성인 여성. 관계를 어디까지 발전시킬지는 당신이 결정한다.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 04 플레이 가이드 -->
+  <section id="play-guide">
+    <div class="label">플레이 가이드</div>
+    <div class="guide">
+      <h3>남주 유혹하기</h3>
+      <div class="tags">#적극적인유혹 #철벽무너뜨리기</div>
+      <p>반년 동안 눈여겨봤던 바텐더 {{char}}. 오늘은 손님으로만 남을 생각이 없다. 평소 침착한 그가 어디까지 흔들리는지 직접 확인해 보자.</p>
+    </div>
+    <div class="guide">
+      <h3>다른 남자와 바에 방문하기</h3>
+      <div class="tags">#질투유발 #감정자각</div>
+      <p>언제나 혼자 찾아오던 {{user}}가 오늘은 낯선 남자와 함께 Alone에 들어선다. {{char}}는 평소처럼 두 사람의 주문을 받지만, 어쩐지 평소보다 말수가 줄어든다.</p>
+    </div>
+    <div class="guide">
+      <h3>하룻밤만 즐기는 사이 되기</h3>
+      <div class="tags">#선관계후연애 #어른의연애</div>
+      <p>연애는 부담스럽지만 서로에게 끌리는 건 부정할 수 없다. {{char}}와 합의하에 가벼운 관계를 시작하고, 감정이 깊어지는 쪽이 누구인지 지켜보자.</p>
+    </div>
+    <p class="note">플레이 가이드는 선택 가능한 방향이며, 사건은 자동으로 발생하지 않습니다.</p>
+    <div class="label" style="margin-top:34px">SPECIAL COMMANDS</div>
+    <div class="guide">
+      <div class="command"><strong>!속마음</strong><span>차태건의 현재 감정과 숨겨진 생각 확인</span></div>
+      <div class="command"><strong>!핸드폰</strong><span>차태건의 휴대폰 잠금화면 및 알림 확인</span></div>
+      <div class="command"><strong>!다음</strong><span>현재 장면을 마무리하고 자연스럽게 다음 장면으로 이동</span></div>
+      <div class="command"><strong>!그만</strong><span>진행 중인 행동이나 상황 중단</span></div>
+      <div class="command"><strong>!이벤트</strong><span>현재 상황에 어울리는 새로운 사건 하나 발생</span></div>
+    </div>
+  </section>
+
+  <!-- 05 플랫폼 연결 -->
+  <section class="platform" id="platform">
+    <h2>오늘 밤, 어떤 주문을 하시겠어요?</h2>
+    <div class="links">
+      <a href="#">티키타</a>
+      <a href="#">케이브덕</a>
+      <a href="#">유니챗</a>
+      <a href="#">크랙</a>
+    </div>
+  </section>
+
 </div>
-</section>
-<section class="story" id="story">
-<div class="label">STORY</div>
-<p class="nr">금요일 밤, 작은 혼술 칵테일 바 Alone.</p>
-<p class="nr">카운터 안에서 잔을 정리하던 {{char}}는 문이 열리는 소리에 고개를 들었다.</p>
-<p class="nr">익숙한 자리에 앉는 여자를 무심코 바라보던 그의 손이 잠시 멈췄다. 늘 검은 머리였던 {{user}}가 밝은 금발로 나타난 것이다.</p>
-<p class="nr">반년 동안 꾸준히 찾아오던 단골손님. 분명 익숙한 얼굴인데 오늘은 어딘가 낯설었다.</p>
-<p class="dl"><b>{{char}}</b> ……못 알아볼 뻔했네요. 머리, 잘 어울리세요.</p>
-<p class="nr">그는 잠시 시선을 머물렀다가 평소처럼 잔을 꺼내 들었다.</p>
-<p class="dl"><b>{{char}}</b> 오늘도 늘 드시던 걸로 준비해 드릴까요?</p>
-</section>
-<section id="characters">
-<div class="label">CHARACTERS</div>
-<div class="chars">
-<article class="char"><div class="char-img" id="malePhoto">남주 이미지 준비 중</div><div class="char-body"><div class="char-name">차태건</div><div class="char-role">오너 바텐더</div><p class="char-desc">조용하고 절제된 직진남. 세심하게 관찰하고, 감정이 명확해지면 직접 표현한다.</p></div></article>
-<article class="char"><div class="char-img" id="femalePhoto">여주 금발 이미지 준비 중</div><div class="char-body"><div class="char-name">이시현 (당신)</div><div class="char-role">단골손님 · 추천 페르소나</div><p class="char-desc">금발로 탈색한 성인 여성. 이름과 성격, 관계의 발전은 당신이 결정한다.</p></div></article>
-</div>
-</section>
-<section id="guide">
-<div class="label">PLAY GUIDE</div>
-<div class="guide"><h3>남주 유혹하기</h3><div class="tags">#적극적인유혹 #철벽무너뜨리기</div><p>반년 동안 눈여겨봤던 바텐더 차태건. 오늘은 손님으로만 남을 생각이 없다. 평소 침착한 그가 어디까지 흔들리는지 직접 확인해 보자.</p></div>
-<div class="guide"><h3>다른 남자와 바에 방문하기</h3><div class="tags">#질투유발 #감정자각</div><p>언제나 혼자 찾아오던 {{user}}가 오늘은 낯선 남자와 함께 Alone에 들어선다. 차태건은 평소처럼 두 사람의 주문을 받지만, 어쩐지 평소보다 말수가 줄어든다.</p></div>
-<div class="guide"><h3>하룻밤만 즐기는 사이 되기</h3><div class="tags">#선관계후연애 #어른의연애</div><p>연애는 부담스럽지만 서로에게 끌리는 건 부정할 수 없다. 차태건과 합의하에 가벼운 관계를 시작하고, 감정이 깊어지는 쪽이 누구인지 지켜보자.</p></div>
-<p class="note">추천 플레이는 가능한 방향이며 사건은 자동으로 발생하지 않습니다.</p>
-</section>
-<section id="commands">
-<div class="label">SPECIAL COMMANDS</div>
-<div class="command-grid">
-<div class="command"><code>!속마음</code><p>현재 장면에서 차태건이 느끼는 감정과 감추고 있는 생각을 확인합니다.</p></div>
-<div class="command"><code>!핸드폰</code><p>차태건의 휴대폰 잠금화면과 알림을 확인합니다.</p></div>
-<div class="command"><code>!다음</code><p>현재 장면을 마무리하고 다음 상황으로 자연스럽게 이동합니다.</p></div>
-<div class="command"><code>!그만</code><p>진행 중인 행동이나 상황을 중단합니다.</p></div>
-<div class="command"><code>!이벤트</code><p>현재 상황에 어울리는 새로운 사건을 하나 발생시킵니다.</p></div>
-</div>
-</section>
-<section id="play" class="platform">
-<div class="label">PLAY</div>
-<h2>오늘 밤, 어떤 주문을 하시겠어요?</h2>
-<div class="links"><a href="https://tikita.ai/ko/story/CAN3J3QN">티키타</a><a href="#" data-pending>케이브덕</a><a href="#" data-pending>유니챗</a><a href="#" data-pending>크랙</a></div>
-<p class="model">추천 모델: Flash 3.8 &amp; Pro2.5</p>
-<button class="backtop" type="button" id="toTop">↑ 맨 위로 돌아가기</button>
-</section>
-</main>
+<footer class="footer"><a href="#">↑ 맨 위로 돌아가기</a></footer>
 <script>
-const menu=document.getElementById('menu'),toggle=document.getElementById('menuToggle');
-toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기')});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
-document.getElementById('themeToggle').addEventListener('click',()=>document.body.classList.toggle('light'));
-document.getElementById('toTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-document.querySelectorAll('[data-pending]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();alert('작품 링크 준비 중입니다.')}));
-/* 이미지 업로드 후 아래 주석을 해제하세요:
-document.getElementById('malePhoto').style.backgroundImage="url('assets/taegeon.jpg')";
-document.getElementById('femalePhoto').style.backgroundImage="url('assets/sihyeon.jpg')";
-*/
+const menu=document.getElementById('nav-menu'),button=document.getElementById('menu-toggle');
+button.addEventListener('click',()=>{const open=menu.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');button.setAttribute('aria-expanded','false')}));
+document.getElementById('theme-toggle').addEventListener('click',()=>document.body.classList.toggle('light'));
 </script>
-</body></html>
+</body>
+</html>
