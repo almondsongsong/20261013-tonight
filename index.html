@@ -102,9 +102,15 @@ section.hero{border-top:none;padding:0}
   border-radius:14px;overflow:hidden;min-width:0;
 }
 .char-img{
-  aspect-ratio:3/4;background:var(--line) center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--sub);font-size:11px;text-align:center;padding:8px;
+  width:100%;aspect-ratio:1/1;
+  background:var(--line);
+  overflow:hidden;
+}
+.char-img img{
+  display:block;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
 }
 .char-body{padding:12px}
 .char-name{font-size:15px;font-weight:600;margin-bottom:2px;word-break:break-all}
@@ -112,7 +118,7 @@ section.hero{border-top:none;padding:0}
 .char-desc{font-size:12px;color:var(--sub);line-height:1.65}
 @media (max-width:339px){
   .chars{grid-template-columns:1fr}
-  .char-img{aspect-ratio:4/3}
+  .char-img{aspect-ratio:1/1}
 }
 
 /* PLAY GUIDE */
